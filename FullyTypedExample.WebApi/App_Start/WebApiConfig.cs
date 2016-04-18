@@ -7,6 +7,10 @@
 namespace FullyTypedExample.WebApi
 {
     using System.Web.Http;
+    using System.Web.Http.Cors;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
 
     /// <summary>
     /// The Web API configuration.
@@ -21,9 +25,17 @@ namespace FullyTypedExample.WebApi
         /// </param>
         public static void Register(HttpConfiguration config)
         {
+            // Enable CORS
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new { id = RouteParameter.Optional });
+
+            // Configure JSON serializer
+            JsonSerializerSettings settings = config.Formatters.JsonFormatter.SerializerSettings;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            settings.Formatting = Formatting.Indented;
         }
     }
 }

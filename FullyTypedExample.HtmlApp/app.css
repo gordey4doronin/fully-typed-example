@@ -1,0 +1,15 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+table, tr, td {
+    border: 1px black solid;
+}
+
+td {
+    padding: 10px;
+}

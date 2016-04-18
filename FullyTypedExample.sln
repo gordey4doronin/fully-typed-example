@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullyTypedExample.WebApi.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullyTypedExample.Models", "FullyTypedExample.Models\FullyTypedExample.Models.csproj", "{4BD33EFC-1F3F-4732-BC72-07123AB5ADB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullyTypedExample.HtmlApp", "FullyTypedExample.HtmlApp\FullyTypedExample.HtmlApp.csproj", "{CE6A16FA-9F77-4B21-BB64-C1143AAF7D12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4BD33EFC-1F3F-4732-BC72-07123AB5ADB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BD33EFC-1F3F-4732-BC72-07123AB5ADB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BD33EFC-1F3F-4732-BC72-07123AB5ADB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6A16FA-9F77-4B21-BB64-C1143AAF7D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6A16FA-9F77-4B21-BB64-C1143AAF7D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6A16FA-9F77-4B21-BB64-C1143AAF7D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6A16FA-9F77-4B21-BB64-C1143AAF7D12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
