@@ -4,4 +4,4 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(FullyTypedExample.WebApi.SwaggerConfig), "Register")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(FullyTypedExample.WebApi.SwaggerConfig), "RegisterGlobal")]

@@ -21,26 +21,53 @@ namespace FullyTypedExample.WebApi
     /// <summary>
     /// The Swagger configuration.
     /// </summary>
-    public class SwaggerConfig
+    public static class SwaggerConfig
     {
         /// <summary>
-        /// Registers Swagger.
+        /// Registers Swagger using <see cref="GlobalConfiguration.Configuration"/>.
         /// </summary>
-        public static void Register()
+        public static void RegisterGlobal()
         {
-            GlobalConfiguration.Configuration 
-                .EnableSwagger(c =>
-                    {
-                        c.SingleApiVersion("v1", "FullyTypedExample.WebApi");
-                        c.IncludeXmlComments(GetXmlCommentsPathForControllers());
-                        c.IncludeXmlComments(GetXmlCommentsPathForModels());
-                        c.GroupActionsBy(apiDescription => apiDescription.ActionDescriptor.ControllerDescriptor.ControllerName);
-                        c.OrderActionGroupsBy(Comparer<string>.Default);
-                        c.PrettyPrint();
-                    })
-                .EnableSwaggerUi(c =>
-                    {
-                    });
+            Register(GlobalConfiguration.Configuration);
+        }
+
+        /// <summary>
+        /// Registers Swagger using provided <see cref="HttpConfiguration"/>.
+        /// </summary>
+        /// <param name="httpConfiguration">
+        /// The http configuration.
+        /// </param>
+        public static void Register(HttpConfiguration httpConfiguration)
+        {
+            httpConfiguration
+                .EnableSwagger(ConfigureSwagger)
+                .EnableSwaggerUi(ConfigureSwaggerUi);
+        }
+
+        /// <summary>
+        /// Configures Swagger.
+        /// </summary>
+        /// <param name="config">
+        /// The Swagger configuration.
+        /// </param>
+        public static void ConfigureSwagger(SwaggerDocsConfig config)
+        {
+            config.SingleApiVersion("v1", "FullyTypedExample.WebApi");
+            config.IncludeXmlComments(GetXmlCommentsPathForControllers());
+            config.IncludeXmlComments(GetXmlCommentsPathForModels());
+            config.GroupActionsBy(apiDescription => apiDescription.ActionDescriptor.ControllerDescriptor.ControllerName);
+            config.OrderActionGroupsBy(Comparer<string>.Default);
+            config.PrettyPrint();
+        }
+
+        /// <summary>
+        /// Configures Swagger UI.
+        /// </summary>
+        /// <param name="config">
+        /// The Swagger UI configuration.
+        /// </param>
+        public static void ConfigureSwaggerUi(SwaggerUiConfig config)
+        {
         }
 
         /// <summary>
