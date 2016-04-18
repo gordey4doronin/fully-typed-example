@@ -1,0 +1,59 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "FullyTypedExample.WebApi"
+  },
+  "host": "localhost",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/employees": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Gets all employees.",
+        "description": "Gets the list of all employees.",
+        "operationId": "Employees_GetEmployees",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Employee": {
+      "description": "Represents the employee.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "description": "Gets or sets the employee identifier.",
+          "type": "integer"
+        },
+        "name": {
+          "description": "Gets or sets the employee name.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

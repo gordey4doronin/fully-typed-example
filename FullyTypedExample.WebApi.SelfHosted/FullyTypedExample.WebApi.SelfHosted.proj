@@ -1,0 +1,17 @@
+<Project DefaultTarget="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutDir Condition=" '$(OutDir)' == '' ">bin\Debug</OutDir>
+    <OutputPath Condition=" '$(OutputPath)' == '' ">$(OutDir)</OutputPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <Target Name="Build">
+    <MSBuild
+      Projects="FullyTypedExample.WebApi.SelfHosted.csproj"
+      Properties="OutDir=$(OutDir);Configuration=$(Configuration);Platform=$(Platform);OutputPath=$(OutputPath)">
+      <Output
+          TaskParameter="TargetOutputs"
+          ItemName="AssembliesBuiltByChildProjects" />
+    </MSBuild>
+   </Target>
+</Project>

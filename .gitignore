@@ -236,3 +236,4 @@ _Pvt_Extensions
 .fake/
 /FullyTypedExample.HtmlApp/*.js
 /FullyTypedExample.HtmlApp/*.js.map
+/.build/Generated
