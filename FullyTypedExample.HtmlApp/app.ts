@@ -1,37 +1,31 @@
-﻿class Greeter {
+﻿import domready = require('domready');
+import { Repository } from './repository';
+
+class Greeter {
     private element: HTMLElement;
     private table: HTMLElement;
+    private repository: Repository;
 
     constructor(element: HTMLElement) {
         this.element = element;
         this.table = document.createElement('table');
         this.element.appendChild(this.table);
+        this.repository = new Repository();
     }
 
     public makeRequest() {
-        (<any>window).fetch('http://localhost:1234/api/employees')
-            .then((response) => {
-                return response.json();
-            })
-            .then((employees: Employee[]) => {
+        this.repository.getEmployees()
+            .then((employees) => {
                 // Generate html using tempalte string
-                var tableHtml = employees.reduce((acc: string, x: Employee) => {
-                    return `${acc}<tr><td>${x.id}</td><td>${x.name}</td></tr>`;
-                }, '');
-
-                this.table.innerHTML = tableHtml;
+                this.table.innerHTML = employees.reduce<string>((acc, x) => {
+                        return `${acc}<tr><td>${x.id}</td><td>${x.name}</td></tr>`;
+                    }, '');
             });
     }
 }
 
-// ReSharper disable once InconsistentNaming
-interface Employee {
-    id: number;
-    name: string;
-}
-
-window.onload = () => {
+domready(() => {
     var element = document.getElementById('content');
     var greeter = new Greeter(element);
     greeter.makeRequest();
-};
+});
