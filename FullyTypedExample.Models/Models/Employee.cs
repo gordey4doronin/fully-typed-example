@@ -6,6 +6,8 @@
 
 namespace FullyTypedExample.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     /// <summary>
     /// Represents the employee.
     /// </summary>
@@ -14,11 +16,13 @@ namespace FullyTypedExample.Models
         /// <summary>
         /// Gets or sets the employee identifier.
         /// </summary>
+        [Required]
         public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the employee name.
         /// </summary>
+        [Required]
         public string Name { get; set; }
     }
 }

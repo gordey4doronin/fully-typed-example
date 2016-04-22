@@ -42,6 +42,10 @@
   "definitions": {
     "Employee": {
       "description": "Represents the employee.",
+      "required": [
+        "id",
+        "name"
+      ],
       "type": "object",
       "properties": {
         "id": {

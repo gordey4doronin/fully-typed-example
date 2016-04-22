@@ -10,12 +10,12 @@
  * Initializes a new instance of the Employee class.
  * @constructor
  * Represents the employee.
- * @member {number} [id] Gets or sets the employee identifier.
+ * @member {number} id Gets or sets the employee identifier.
  * 
- * @member {string} [name] Gets or sets the employee name.
+ * @member {string} name Gets or sets the employee name.
  * 
  */
 export interface Employee {
-    id?: number;
-    name?: string;
+    id: number;
+    name: string;
 }
