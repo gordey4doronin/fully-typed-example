@@ -37,6 +37,42 @@
         },
         "deprecated": false
       }
+    },
+    "/api/employees/{employeeId}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Gets employee by id.",
+        "description": "Gets the employee by specified id.",
+        "operationId": "Employees_GetEmployeeById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "description": "The employee id.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "definitions": {

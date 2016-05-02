@@ -6,6 +6,7 @@
 
 namespace FullyTypedExample.WebApi.Controllers
 {
+    using System.Linq;
     using System.Web.Http;
 
     using FullyTypedExample.Models;
@@ -33,6 +34,24 @@ namespace FullyTypedExample.WebApi.Controllers
                     new Employee { Id = 1, Name = "John Doe" },
                     new Employee { Id = 2, Name = "Jane Doe" }
                 };
+        }
+
+        /// <summary>
+        /// Gets employee by id.
+        /// </summary>
+        /// <param name="employeeId">
+        /// The employee id.
+        /// </param>
+        /// <remarks>
+        /// Gets the employee by specified id.
+        /// </remarks>
+        /// <returns>
+        /// The <see cref="Employee"/>.
+        /// </returns>
+        [Route("api/employees/{employeeId:int}")]
+        public Employee GetEmployeeById(int employeeId)
+        {
+            return this.GetEmployees().SingleOrDefault(x => x.Id == employeeId);
         }
     }
 }
