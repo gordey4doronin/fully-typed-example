@@ -9,6 +9,32 @@
     "http"
   ],
   "paths": {
+    "/api/departments": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Gets all departments.",
+        "description": "Gets the list of all departments.",
+        "operationId": "Departments_GetDepartments",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DepartmentsResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/api/employees": {
       "get": {
         "tags": [
@@ -76,6 +102,41 @@
     }
   },
   "definitions": {
+    "DepartmentsResponse": {
+      "description": "Represents the response containing the list of departments.",
+      "required": [
+        "departments"
+      ],
+      "type": "object",
+      "properties": {
+        "departments": {
+          "description": "Gets or sets the list of departments.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Department"
+          }
+        }
+      }
+    },
+    "Department": {
+      "description": "Represents the department.",
+      "required": [
+        "id",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "description": "Gets or sets the department identifier.",
+          "type": "integer"
+        },
+        "name": {
+          "description": "Gets or sets the department name.",
+          "type": "string"
+        }
+      }
+    },
     "Employee": {
       "description": "Represents the employee.",
       "required": [

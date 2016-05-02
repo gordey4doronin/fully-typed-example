@@ -101,11 +101,13 @@
     <Compile Include="App_Start\SwaggerActivator.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\DepartmentsResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

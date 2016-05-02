@@ -7,6 +7,33 @@
 
 /**
  * @class
+ * Initializes a new instance of the DepartmentsResponse class.
+ * @constructor
+ * Represents the response containing the list of departments.
+ * @member {array} departments Gets or sets the list of departments.
+ * 
+ */
+export interface DepartmentsResponse {
+    departments: Department[];
+}
+
+/**
+ * @class
+ * Initializes a new instance of the Department class.
+ * @constructor
+ * Represents the department.
+ * @member {number} id Gets or sets the department identifier.
+ * 
+ * @member {string} name Gets or sets the department name.
+ * 
+ */
+export interface Department {
+    id: number;
+    name: string;
+}
+
+/**
+ * @class
  * Initializes a new instance of the Employee class.
  * @constructor
  * Represents the employee.
