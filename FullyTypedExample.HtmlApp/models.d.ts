@@ -14,8 +14,14 @@
  * 
  * @member {string} name Gets or sets the employee name.
  * 
+ * @member {string} firstName Gets or sets the employee first name.
+ * 
+ * @member {string} lasTNAME Gets or sets the last name.
+ * 
  */
 export interface Employee {
     id: number;
     name: string;
+    firstName: string;
+    lasTNAME: string;
 }

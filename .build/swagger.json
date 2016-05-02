@@ -80,7 +80,9 @@
       "description": "Represents the employee.",
       "required": [
         "id",
-        "name"
+        "name",
+        "firstName",
+        "lasT_NAME"
       ],
       "type": "object",
       "properties": {
@@ -91,6 +93,14 @@
         },
         "name": {
           "description": "Gets or sets the employee name.",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "Gets or sets the employee first name.",
+          "type": "string"
+        },
+        "lasT_NAME": {
+          "description": "Gets or sets the last name.",
           "type": "string"
         }
       }

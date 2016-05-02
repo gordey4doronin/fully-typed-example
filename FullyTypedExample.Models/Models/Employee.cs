@@ -24,5 +24,18 @@ namespace FullyTypedExample.Models
         /// </summary>
         [Required]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employee first name.
+        /// </summary>
+        [Required]
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        [Required]
+        // ReSharper disable once InconsistentNaming
+        public string LAST_NAME { get; set; }
     }
 }
