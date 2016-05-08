@@ -1,3 +1,4 @@
+[en-US :us:](https://github.com/gordey4doronin/fully-typed-example/blob/master/README.md) | ru-RU :ru:
 #  На пути к полной типизации с TypeScript, Swashbuckle и AutoRest 
 
 ## Введение
