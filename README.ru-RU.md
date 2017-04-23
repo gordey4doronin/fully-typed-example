@@ -12,7 +12,7 @@
 Сколько раз вместо того чтобы сложить “2” и “2” складывал “2” и “Функцию возвращающую 2”, или передавал DOM объект вместо его jQuery обертки.
 Появление статических анализаторов кода, таких как JSLint, несколько облегчило проблему, но настоящим прорывом, особенно в командной разработке, для нас стал TypeScript.
 
-![TypeScript + Swagger logo](https://habrastorage.org/files/b0b/c02/9aa/b0bc029aa8f7457784c62d25b8dbb42b.png)
+![TypeScript + Swagger logo](images/typescript-swagger.png)
 
 ## Суть проблемы
 
@@ -130,7 +130,7 @@ public static void ConfigureSwagger(SwaggerDocsConfig config)
 Теперь можно запустить проект и увидеть интерфейс Swagger.
 http://localhost:1234/swagger
 
-![Swagger UI](https://habrastorage.org/files/41d/d89/f88/41dd89f886774cb3b52a5b6d4876894b.png)
+![Swagger UI](images/swagger-start.png)
 
 Рядом можно посмотреть на сам swagger-документ в виде JSON.
 http://localhost:1234/swagger/docs/v1
@@ -201,7 +201,7 @@ public Employee GetEmployeeById(int employeeId)
 
 И заново сгенерировали swagger.json. Посмотрим, что поменялось
 
-![Swagger docuemnt diff](https://habrastorage.org/files/e72/72c/346/e7272c346d144e9aab1f882a2a93aecd.png)
+![Swagger docuemnt diff](images/swagger-diff.png)
 
 Как видите, для этого action появилась документация, которую легко можно увидеть, используя diff просмотрщик.
 Благодаря опции PrettyPrint она отформатирована и легко читается.
