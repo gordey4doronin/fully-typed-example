@@ -13,7 +13,7 @@ Quite often instead of adding “2” and “2” he added “2” and “Callba
 Of course, occurrence of such static code analyzers as JSLint served as a solution for this problem.
 However, TypeScript was a real breakthrough, especially for the teamwork.
 
-![TypeScript + Swagger logo](https://habrastorage.org/files/b0b/c02/9aa/b0bc029aa8f7457784c62d25b8dbb42b.png)
+![TypeScript + Swagger logo](images/typescript-swagger.png)
 
 ## Problem Key Part
 
@@ -124,7 +124,7 @@ This option is required for storing documentation in the version control system 
 Now we can launch the project and see Swagger user interface:
 http://localhost:1234/swagger
 
-![Swagger UI](https://habrastorage.org/files/41d/d89/f88/41dd89f886774cb3b52a5b6d4876894b.png)
+![Swagger UI](images/swagger-start.png)
 
 It is also possible to see the swagger-document in JSON format.
 http://localhost:1234/swagger/docs/v1
@@ -195,7 +195,7 @@ public Employee GetEmployeeById(int employeeId)
 
 And then re-generated swagger.json. This is what changed:
 
-![Swagger docuemnt diff](https://habrastorage.org/files/e72/72c/346/e7272c346d144e9aab1f882a2a93aecd.png)
+![Swagger docuemnt diff](images/swagger-diff.png)
 
 As you can see, a new documentation, which is possible to view with any of the diff viewer, appeared for this action. Owing to PrettyPrint option, it is formatted and easy to read.
 
